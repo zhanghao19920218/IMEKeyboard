@@ -1,0 +1,132 @@
+# The keyboard details by width
+mobile:
+  brand_name:
+    - name: "GooglePixel3"
+      sogou: 1175
+      baidu: 1115
+      iflytek: 1120
+      width: 1080
+      hwbaidu: 1186
+      wechat: 1650
+    - name: "iQOO_Z3"
+      sogou: 1175
+      baidu: 1115
+      iflytek: 1175
+      width: 1080
+      hwbaidu: 1555
+      wechat: 1650
+    - name: "Google_Pixel_A"
+      iflytek: 1495
+      sogou: 1546
+      baidu: 1483
+      width: 1080
+      hwbaidu: 1555
+      wechat: 1650
+    - name: "Google_Pixel_B"
+      iflytek: 1495
+      sogou: 1546
+      baidu: 1483
+      width: 1080
+      hwbaidu: 1555
+      wechat: 1650
+    - name: "Google_Pixel_C"
+      iflytek: 1495
+      sogou: 1546
+      baidu: 1483
+      width: 1080
+      hwbaidu: 1555
+      wechat: 1650
+    - name: "Google_Pixel_D"
+      iflytek: 1495
+      sogou: 1546
+      baidu: 1483
+      width: 1080
+      hwbaidu: 1555
+      wechat: 1650
+    - name: "Google_Nexus_6"
+      iflytek: 1495
+      sogou: 1546
+      baidu: 1483
+      width: 1080
+      hwbaidu: 1555
+      wechat: 1650
+    - name: "GooglePixel2XL"
+      iflytek: 1503
+      sogou: 1575
+      baidu: 1530
+      width: 1440
+      hwbaidu: 1590
+      wechat: 1650
+  width:
+    - width: 1080
+      sogou:
+        logo_height: 75
+        menu_height: 130
+        keyboard_height: 635
+        slide_x: 8
+        slide_y: 4
+        down_arrow_width: 150
+      baidu:
+        logo_height: 70
+        menu_height: 130
+        keyboard_height: 700
+        slide_x: 11
+        slide_y: 4
+        down_arrow_width: 164
+      iflytek:
+        logo_height: 73
+        menu_height: 130
+        keyboard_height: 704
+        slide_x: 15
+        slide_y: 12
+        down_arrow_width: 156
+      hwbaidu:
+        logo_height: 0
+        menu_height: 130
+        keyboard_height: 716
+        slide_x: 10
+        slide_y: 18
+        down_arrow_width: 171
+      wechat:
+        logo_height: 0
+        menu_height: 215
+        keyboard_height: 840
+        slide_x: 0
+        slide_y: 0
+        down_arrow_width: 200
+    - width: 1440
+      wechat:
+        logo_height: 0
+        menu_height: 215
+        keyboard_height: 840
+        slide_x: 0
+        slide_y: 0
+        down_arrow_width: 200
+      sogou:
+        logo_height: 101
+        menu_height: 170
+        keyboard_height: 853
+        slide_x: 5
+        slide_y: 9
+        down_arrow_width: 202
+      baidu:
+        logo_height: 85
+        menu_height: 145
+        keyboard_height: 939
+        slide_x: 20
+        slide_y: 10
+        down_arrow_width: 222
+      iflytek:
+        logo_height: 98
+        menu_height: 170
+        keyboard_height: 928
+        slide_x: 15
+        slide_y: 8
+        down_arrow_width: 242
+      hwbaidu:
+        logo_height: 50
+        menu_height: 223
+        keyboard_height: 936
+        slide_x: 20
+        slide_y: 12
+        down_arrow_width: 248
