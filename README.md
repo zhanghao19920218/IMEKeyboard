@@ -10,4 +10,4 @@
 
 ## Usage
 
-> go get 
+> go get github.com/zhanghao19920218/IMEKeyboard
