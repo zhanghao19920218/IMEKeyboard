@@ -1,4 +1,4 @@
-module IMEKeyboard
+module github.com/zhanghao19920218/IMEKeyboard
 
 go 1.19
 
