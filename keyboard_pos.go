@@ -279,7 +279,7 @@ func (model *KeyboardPos) ChooseWord() *KeyboardAxiosPos {
 	return &KeyboardAxiosPos{
 		X: model.keyboardConfig.DetailMenuPos(model.keyboardBrandType).X +
 			int64(model.keyboardConfig.GetKeyElementWidth(model.keyboardBrandType)),
-		Y: int64(model.keyboardConfig.GetKeyElementWidth(model.keyboardBrandType)),
+		Y: model.keyboardConfig.DetailMenuPos(model.keyboardBrandType).Y,
 	}
 }
 
