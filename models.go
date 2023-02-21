@@ -269,7 +269,7 @@ func (model *KeyboardRealConfigModel) MenuPos(keyboardType KeyboardBrandType) *K
 		menuXAxios = int64(model.GetSingleMenuWidth(keyboardType)*2 + model.BrandDetailModel.HWBaidu.SlideX)
 		menuYAxios = int64(model.GetKeyboardStartY(keyboardType) + model.GetKeyElementHeight(keyboardType)*15/10)
 	case WeChatBrand:
-		menuXAxios = int64(model.BrandDetailModel.Width / 2)
+		menuXAxios = int64(model.BrandDetailModel.Width / 8 * 5)
 		menuYAxios = int64(model.GetMenuY(keyboardType))
 	default:
 		menuXAxios = int64(model.GetSingleMenuWidth(keyboardType) * 25 / 10)
