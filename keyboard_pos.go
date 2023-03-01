@@ -59,6 +59,20 @@ func (model *KeyboardPos) KeyboardQ() *KeyboardAxiosPos {
 	}
 }
 
+// MoreChooseWord
+//
+//	@Description: Choose word in more candidate view
+//	@receiver model
+//	@return *KeyboardAxiosPos
+func (model *KeyboardPos) MoreChooseWord() *KeyboardAxiosPos {
+	switch model.keyboardBrandType {
+	case WeChatBrand:
+		return model.KeyboardE()
+	default:
+		return model.ChooseWord()
+	}
+}
+
 func (model *KeyboardPos) KeyboardW() *KeyboardAxiosPos {
 	return &KeyboardAxiosPos{
 		X: model.keyboardConfig.QwertyQXAxios(model.keyboardBrandType) +
