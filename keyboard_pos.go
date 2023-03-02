@@ -415,7 +415,7 @@ func (model *KeyboardPos) KeyboardLastWord() *KeyboardAxiosPos {
 func (model *KeyboardPos) KeyboardBaiduNextPage() *KeyboardAxiosPos {
 	var xAxios int64
 	var yAxios = model.keyboardConfig.QwertyQYAxios(model.keyboardBrandType) +
-		int64(model.keyboardConfig.GetKeyElementHeight(model.keyboardBrandType))
+		int64(model.keyboardConfig.GetKeyElementHeight(model.keyboardBrandType)*3)
 	if model.keyboardBrandType == HWBaiduBrand {
 		xAxios = model.keyboardConfig.QwertyQXAxios(model.keyboardBrandType) +
 			5*int64(model.keyboardConfig.GetKeyElementWidth(model.keyboardBrandType))
