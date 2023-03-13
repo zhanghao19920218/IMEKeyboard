@@ -375,9 +375,9 @@ func (model *KeyboardRealConfigModel) SlideStartX(keyboardType KeyboardBrandType
 // KRGInstance keyboard shared instance
 var KRGInstance *KeyboardRealConfigModel
 
-func KRCGetInstance(deviceName string) (single *KeyboardRealConfigModel, keyErr *KeyboardError) {
+func KRCGetInstance(deviceName string, filePath string) (single *KeyboardRealConfigModel, keyErr *KeyboardError) {
 	if KRGInstance == nil {
-		model, err := FileToMobileYaml()
+		model, err := FileToMobileYaml(filePath)
 		if err != nil {
 			keyErr = &KeyboardError{
 				Message:   "Init mobile keyboard error",

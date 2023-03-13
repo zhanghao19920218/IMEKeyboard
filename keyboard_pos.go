@@ -444,9 +444,10 @@ var kbpOnce sync.Once
 
 func KBPSharedInstance(
 	keyboardBrandType KeyboardBrandType,
-	deviceName string) (single *KeyboardPos, keyErr *KeyboardError) {
+	deviceName string,
+	filePath string) (single *KeyboardPos, keyErr *KeyboardError) {
 	if KBPInstance == nil {
-		model, err := KRCGetInstance(deviceName)
+		model, err := KRCGetInstance(deviceName, filePath)
 		if err != nil {
 			keyErr = &KeyboardError{
 				Message:   "Init the keyboard pos error",

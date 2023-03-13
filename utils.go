@@ -6,8 +6,8 @@ import (
 )
 
 // FileToMobileYaml Reading the yaml file, to make it to yaml model
-func FileToMobileYaml() (model MobileYamlModel, errorType *KeyboardError) {
-	file, err := os.ReadFile(YamlFilePath)
+func FileToMobileYaml(filePath string) (model MobileYamlModel, errorType *KeyboardError) {
+	file, err := os.ReadFile(filePath)
 	if err != nil {
 		errorType = &KeyboardError{
 			Message:   "Read File Error",
