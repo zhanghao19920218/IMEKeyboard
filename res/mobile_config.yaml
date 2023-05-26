@@ -57,6 +57,13 @@ mobile:
       width: 1440
       hwbaidu: 1590
       wechat: 1650
+    - name: "REDMIK40"
+      iflytek: 1448
+      sogou: 1500
+      baidu: 1441
+      width: 1080
+      hwbaidu: 1441
+      wechat: 1556
   width:
     - width: 1080
       sogou:

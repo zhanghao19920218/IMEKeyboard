@@ -52,6 +52,10 @@ func (model *KeyboardPos) SixCh() *KeyboardAxiosPos {
 	return model.keyboardConfig.ChTwentyKeyEle(model.keyboardBrandType)
 }
 
+func (model *KeyboardPos) RareWord() *KeyboardAxiosPos {
+	return model.keyboardConfig.RareWordKeyEle(model.keyboardBrandType)
+}
+
 func (model *KeyboardPos) KeyboardQ() *KeyboardAxiosPos {
 	return &KeyboardAxiosPos{
 		X: model.keyboardConfig.QwertyQXAxios(model.keyboardBrandType),

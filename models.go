@@ -296,6 +296,25 @@ func (model *KeyboardRealConfigModel) ChNineKeyEle(keyboardType KeyboardBrandTyp
 	}
 }
 
+func (model *KeyboardRealConfigModel) RareWordKeyEle(keyboardType KeyboardBrandType) *KeyboardAxiosPos {
+	var menuYAxios int64
+	var menuXAxios int64
+	if keyboardType == HWBaiduBrand {
+		menuXAxios = int64(model.GetKeyElementWidth(keyboardType) * 38 / 10)
+		menuYAxios = int64(model.GetKeyElementHeight(keyboardType)*12/10 + model.GetKeyboardStartY(keyboardType))
+	} else if keyboardType == WeChatBrand {
+		menuXAxios = int64(model.GetKeyElementWidth(keyboardType) * 4)
+		menuYAxios = int64(model.GetKeyElementHeight(keyboardType)*12/10 + model.GetKeyboardStartY(keyboardType))
+	} else {
+		menuXAxios = int64(model.GetKeyElementWidth(keyboardType) * 87 / 10)
+		menuYAxios = int64(model.GetKeyElementHeight(keyboardType)/2 + model.GetKeyboardStartY(keyboardType))
+	}
+	return &KeyboardAxiosPos{
+		X: menuXAxios,
+		Y: menuYAxios,
+	}
+}
+
 // ChTwentyKeyEle Chinese 26key keyboard element
 func (model *KeyboardRealConfigModel) ChTwentyKeyEle(keyboardType KeyboardBrandType) *KeyboardAxiosPos {
 	var menuYAxios int64
