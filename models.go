@@ -105,6 +105,7 @@ type KeyboardType int64
 const (
 	Keyboard26Key KeyboardType = iota
 	Keyboard9Key
+	KeyboardRareWord
 )
 
 type KeyboardAxiosPos struct {
