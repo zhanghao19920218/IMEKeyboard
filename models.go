@@ -450,6 +450,7 @@ func KRCGetInstance(deviceName string, filePath string) (single *KeyboardRealCon
 				IflytekStartY:    targetDevice.IflytekStartY,
 				HWBaiduStartY:    targetDevice.HWBaiduStartY,
 				WeChatStartY:     targetDevice.WeChatStartY,
+				GBoardStartY:     targetDevice.GBoardStartY,
 				BrandDetailModel: targetDevicePos,
 			}
 		})
