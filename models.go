@@ -22,6 +22,8 @@ type BrandNameYamlModel struct {
 
 	WeChatStartY uint64 `yaml:"wechat"`
 
+	GBoardStartY uint64 `yaml:"gboard"`
+
 	Width uint64 `yaml:"width"`
 }
 
@@ -58,6 +60,8 @@ type BrandDetailPosModel struct {
 	HWBaidu ScreenWidthYamlModel `yaml:"hwbaidu"`
 
 	WeChat ScreenWidthYamlModel `yaml:"wechat"`
+
+	GBoard ScreenWidthYamlModel `yaml:"gboard"`
 }
 
 // IsWidth Filter the same width in the screen
@@ -87,6 +91,8 @@ type KeyboardRealConfigModel struct {
 
 	WeChatStartY uint64
 
+	GBoardStartY uint64
+
 	BrandDetailModel BrandDetailPosModel
 }
 
@@ -98,6 +104,7 @@ const (
 	HWBaiduBrand
 	IflytekBrand
 	WeChatBrand
+	GBoardBrand
 )
 
 type KeyboardType int64
@@ -126,6 +133,8 @@ func (model *KeyboardRealConfigModel) ImeStartY(keyboardType KeyboardBrandType) 
 		return model.WeChatStartY
 	case IflytekBrand:
 		return model.IflytekStartY
+	case GBoardBrand:
+		return model.GBoardStartY
 	}
 	return 0
 }
@@ -144,6 +153,8 @@ func (model *KeyboardRealConfigModel) GetMenuY(keyboardType KeyboardBrandType) u
 		ret = model.WeChatStartY + model.BrandDetailModel.WeChat.MenuHeight/2 + model.BrandDetailModel.WeChat.LogoHeight
 	case IflytekBrand:
 		ret = model.IflytekStartY + model.BrandDetailModel.Iflytek.MenuHeight/2 + model.BrandDetailModel.Iflytek.LogoHeight
+	case GBoardBrand:
+		ret = model.GBoardStartY + model.BrandDetailModel.GBoard.MenuHeight/2 + model.BrandDetailModel.GBoard.LogoHeight
 	}
 	return ret
 }
@@ -162,6 +173,8 @@ func (model *KeyboardRealConfigModel) GetCandidateHeight(keyboardType KeyboardBr
 		ret = model.BrandDetailModel.WeChat.LogoHeight + model.BrandDetailModel.WeChat.MenuHeight
 	case IflytekBrand:
 		ret = model.BrandDetailModel.Iflytek.LogoHeight + model.BrandDetailModel.Iflytek.MenuHeight
+	case GBoardBrand:
+		ret = model.BrandDetailModel.GBoard.LogoHeight + model.BrandDetailModel.GBoard.MenuHeight
 	}
 	return ret
 }
@@ -180,6 +193,8 @@ func (model *KeyboardRealConfigModel) GetSingleMenuWidth(keyboardType KeyboardBr
 		ret = model.BrandDetailModel.WeChat.DownArrowWidth
 	case IflytekBrand:
 		ret = (model.BrandDetailModel.Width - model.BrandDetailModel.Iflytek.DownArrowWidth) / 7
+	case GBoardBrand:
+		ret = (model.BrandDetailModel.Width - model.BrandDetailModel.GBoard.DownArrowWidth) / 5
 	}
 	return ret
 }
@@ -197,6 +212,8 @@ func (model *KeyboardRealConfigModel) GetKeyElementWidth(keyboardType KeyboardBr
 		ret = model.BrandDetailModel.Width / 10
 	case IflytekBrand:
 		ret = (model.BrandDetailModel.Width - 2*model.BrandDetailModel.Iflytek.SlideX) / 10
+	case GBoardBrand:
+		ret = (model.BrandDetailModel.Width - 2*model.BrandDetailModel.GBoard.SlideX) / 10
 	}
 	return ret
 }
@@ -215,6 +232,8 @@ func (model *KeyboardRealConfigModel) GetKeyElementHeight(keyboardType KeyboardB
 		ret = (model.BrandDetailModel.WeChat.KeyboardHeight - 2*model.BrandDetailModel.WeChat.SlideY) / 4
 	case IflytekBrand:
 		ret = (model.BrandDetailModel.Iflytek.KeyboardHeight - 2*model.BrandDetailModel.Iflytek.SlideY) / 4
+	case GBoardBrand:
+		ret = (model.BrandDetailModel.GBoard.KeyboardHeight - 2*model.BrandDetailModel.GBoard.SlideY) / 4
 	}
 	return ret
 }
@@ -233,6 +252,8 @@ func (model *KeyboardRealConfigModel) GetKeyboardStartY(keyboardType KeyboardBra
 		ret = model.WeChatStartY + model.BrandDetailModel.WeChat.MenuHeight + model.BrandDetailModel.WeChat.LogoHeight
 	case IflytekBrand:
 		ret = model.IflytekStartY + model.BrandDetailModel.Iflytek.LogoHeight + model.BrandDetailModel.Iflytek.MenuHeight + model.BrandDetailModel.Iflytek.SlideY
+	case GBoardBrand:
+		ret = model.GBoardStartY + model.BrandDetailModel.GBoard.MenuHeight + model.BrandDetailModel.GBoard.SlideY
 	}
 	return ret
 }
@@ -350,6 +371,8 @@ func (model *KeyboardRealConfigModel) QwertyQXAxios(keyboardType KeyboardBrandTy
 		ret = int64(model.BrandDetailModel.WeChat.SlideX + model.GetKeyElementWidth(keyboardType)/2)
 	case IflytekBrand:
 		ret = int64(model.BrandDetailModel.Iflytek.SlideX + model.GetKeyElementWidth(keyboardType)/2)
+	case GBoardBrand:
+		ret = int64(model.BrandDetailModel.GBoard.SlideX + model.GetKeyElementWidth(keyboardType)/2)
 	}
 	return ret
 }
