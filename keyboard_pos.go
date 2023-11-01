@@ -416,6 +416,19 @@ func (model *KeyboardPos) KeyboardLastWord() *KeyboardAxiosPos {
 	}
 }
 
+// KeyboardSymbolSwitch
+//
+//	@Description: Change the keyboard position
+//	@receiver model
+//	@return *KeyboardAxiosPos
+func (model *KeyboardPos) KeyboardSymbolSwitch() *KeyboardAxiosPos {
+	return &KeyboardAxiosPos{
+		X: model.keyboardConfig.QwertyQXAxios(model.keyboardBrandType),
+		Y: model.keyboardConfig.QwertyQYAxios(model.keyboardBrandType) +
+			int64(model.keyboardConfig.GetKeyElementHeight(model.keyboardBrandType))*3,
+	}
+}
+
 func (model *KeyboardPos) KeyboardBaiduNextPage() *KeyboardAxiosPos {
 	var xAxios int64
 	var yAxios = model.keyboardConfig.QwertyQYAxios(model.keyboardBrandType) +
