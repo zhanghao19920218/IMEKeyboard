@@ -340,6 +340,13 @@ func (model *KeyboardPos) DownArrowAction() *KeyboardAxiosPos {
 	}
 }
 
+func (model *KeyboardPos) KeyboardOne() *KeyboardAxiosPos {
+	return &KeyboardAxiosPos{
+		X: int64(model.keyboardConfig.NineSingleItem(model.keyboardBrandType)),
+		Y: model.keyboardConfig.QwertyQYAxios(model.keyboardBrandType),
+	}
+}
+
 func (model *KeyboardPos) KeyboardABC() *KeyboardAxiosPos {
 	return &KeyboardAxiosPos{
 		X: int64(model.keyboardConfig.NineSingleItem(model.keyboardBrandType) +
