@@ -327,6 +327,15 @@ func (model *KeyboardPos) KeyboardHeight() uint64 {
 	return model.keyboardConfig.GetKeyElementHeight(model.keyboardBrandType)
 }
 
+// KeyboardWidth
+//
+//	@Description: Get the key element width
+//	@receiver model
+//	@return uint64
+func (model *KeyboardPos) KeyboardWidth() uint64 {
+	return model.keyboardConfig.GetKeyElementWidth(model.keyboardBrandType)
+}
+
 // DownArrowAction
 //
 //	@Description: Get the down arrow action
